@@ -528,3 +528,20 @@ a:focus-visible, button:focus-visible {
   .footer-logo { margin: 0; }
   .site-footer { padding-top: 12px; }
 }
+
+/* DESKTOP HEADER SIZE FIX */
+/* Keep mobile exactly as it is */
+
+@media (min-width: 951px) {
+  .site-header .masthead {
+    padding: 0 !important;
+  }
+
+  .site-header .brand-link img {
+    width: 100% !important;
+    max-width: none !important;
+    height: 130px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+}
