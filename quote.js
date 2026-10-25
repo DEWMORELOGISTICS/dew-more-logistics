@@ -1,6 +1,8 @@
 
-/* D.E.W. More Logistics LLC
-   Freight Quote Email Preparation */
+/*
+ D.E.W. MORE LOGISTICS LLC
+ Freight Quote Request Form
+*/
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -14,39 +16,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!form.reportValidity()) return;
 
-    const formData = new FormData(form);
+    const data = new FormData(form);
 
     const fields = [
       ["Full Name", "contactName"],
-      ["Company Name", "company"],
-      ["Email Address", "email"],
-      ["Phone Number", "phone"],
-      ["Service Requested", "service"],
+      ["Company", "company"],
+      ["Email", "email"],
+      ["Phone", "phone"],
+      ["Service", "service"],
       ["Pickup Date", "pickupDate"],
       ["Pickup Location", "pickup"],
       ["Delivery Location", "delivery"],
-      ["Estimated Weight", "weight"],
-      ["Cargo Dimensions", "dimensions"],
-      ["Shipment Description", "details"]
+      ["Weight", "weight"],
+      ["Dimensions", "dimensions"],
+      ["Shipment Details", "details"]
     ];
 
-    const emailBody = fields.map(function (field) {
-      const label = field[0];
+    const body = fields.map(function (field) {
+      const title = field[0];
       const key = field[1];
-      const value = formData.get(key) || "Not provided";
-      return label + ": " + value;
+      return title + ": " +
+        (data.get(key) || "Not provided");
     }).join("\n");
 
-    const subject = "Freight Quote Request - D.E.W. More Logistics";
-
-    const mailLink =
-      "mailto:support@dewmorelogistics.com" +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(emailBody);
+    const subject =
+      "Freight Quote Request - " + data.get("service");
 
     const status = document.getElementById("formStatus");
 
     if (status) {
       status.textContent =
-        "Your email application should open now. " +
-        "Review your shipment information and
+        "Your email application should open. " +
+        "Please review and press Send to submit your request.";
+    }
+
+    const emailLink =
+      "mailto:support@dewmorelogistics.com" +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.location.href = emailLink;
+
+  });
+
+});
+
