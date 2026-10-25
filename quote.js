@@ -1,45 +1,52 @@
 
-(() => {
+/* D.E.W. More Logistics LLC
+   Freight Quote Email Preparation */
+
+document.addEventListener("DOMContentLoaded", function () {
+
   const form = document.getElementById("quoteForm");
+
   if (!form) return;
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", function (event) {
+
     event.preventDefault();
 
     if (!form.reportValidity()) return;
 
-    const data = new FormData(form);
+    const formData = new FormData(form);
 
     const fields = [
-      ["Contact", "contactName"],
-      ["Company", "company"],
-      ["Email", "email"],
-      ["Phone", "phone"],
-      ["Service", "service"],
-      ["Pickup date", "pickupDate"],
-      ["Pickup location", "pickup"],
-      ["Delivery location", "delivery"],
-      ["Estimated weight", "weight"],
-      ["Dimensions", "dimensions"],
-      ["Shipment details", "details"]
+      ["Full Name", "contactName"],
+      ["Company Name", "company"],
+      ["Email Address", "email"],
+      ["Phone Number", "phone"],
+      ["Service Requested", "service"],
+      ["Pickup Date", "pickupDate"],
+      ["Pickup Location", "pickup"],
+      ["Delivery Location", "delivery"],
+      ["Estimated Weight", "weight"],
+      ["Cargo Dimensions", "dimensions"],
+      ["Shipment Description", "details"]
     ];
 
-    const body = fields
-      .map(([label, key]) => {
-        return `${label}: ${data.get(key) || "Not provided"}`;
-      })
-      .join("\n");
+    const emailBody = fields.map(function (field) {
+      const label = field[0];
+      const key = field[1];
+      const value = formData.get(key) || "Not provided";
+      return label + ": " + value;
+    }).join("\n");
 
-    const subject = `Freight Quote Request - ${data.get("service")}`;
+    const subject = "Freight Quote Request - D.E.W. More Logistics";
 
-    const mailto =
+    const mailLink =
       "mailto:support@dewmorelogistics.com" +
       "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
+      "&body=" + encodeURIComponent(emailBody);
 
-    document.getElementById("formStatus").textContent =
-      "Your email app should open now. Review and press Send to submit your request.";
+    const status = document.getElementById("formStatus");
 
-    window.location.href = mailto;
-  });
-})();
+    if (status) {
+      status.textContent =
+        "Your email application should open now. " +
+        "Review your shipment information and
