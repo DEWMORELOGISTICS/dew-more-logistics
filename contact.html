@@ -2,171 +2,537 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact & Quotes | D.E.W. More Logistics LLC</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="pages.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | D.E.W. More Logistics LLC</title>
+
+  <meta name="description" content="Contact D.E.W. More Logistics LLC in Fort Worth, Texas for cargo transportation, local delivery, long-distance delivery and expedited freight quotes.">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+
+  <style>
+    /* Contact page finishing touches */
+
+    .contact-hero {
+      background: linear-gradient(
+        125deg,
+        #090c12 0%,
+        #18212d 55%,
+        #301b10 100%
+      ) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -100px;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgba(255, 106, 0, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .contact-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-action-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .business-phone {
+      font-size: clamp(1.25rem, 3vw, 1.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .business-phone:hover,
+    .business-email:hover {
+      color: #ff8d33;
+    }
+
+    .business-email {
+      color: #ffffff;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-detail {
+      border-top: 1px solid rgba(255,255,255,.13);
+      padding: 24px 0;
+    }
+
+    .contact-detail > span {
+      display: block;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      color: #ff8d33;
+      margin-bottom: 12px;
+    }
+
+    .contact-detail p {
+      color: #b8c0cc;
+      margin-top: 8px;
+    }
+
+    .contact-detail address {
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .quote-panel {
+      scroll-margin-top: 120px;
+    }
+
+    .quote-panel input,
+    .quote-panel select,
+    .quote-panel textarea {
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    .contact-call-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.35);
+      font-weight: 800;
+      color: white;
+    }
+
+    .contact-call-button:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    @media (max-width: 680px) {
+      .contact-action-group {
+        flex-direction: column;
+      }
+
+      .contact-call-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="site-header">
-<div class="container nav-wrap">
-<a class="brand" href="index.html">
-<span class="brand-mark">
-<svg viewBox="0 0 64 64" aria-hidden="true">
-<rect x="6" y="23" width="30" height="18" rx="3"/>
-<path d="M36 27h10l8 8v6H36z"/>
-<circle cx="20" cy="45" r="5"/>
-<circle cx="45" cy="45" r="5"/>
-</svg>
-</span>
-<span class="brand-text">
-<span class="brand-top">D.E.W. MORE</span>
-<span class="brand-bottom">LOGISTICS LLC</span>
-</span>
-</a>
-<nav class="site-nav">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About</a>
-<a href="contact.html" class="active">Contact</a>
-</nav>
-<a class="btn btn-primary nav-cta" href="#quote">Request a Quote</a>
-</div>
-</header>
 
-<main>
-<section class="inner-hero contact-hero">
-<div class="container narrow">
-<p class="section-kicker">CONTACT OUR TEAM</p>
-<h1>Let's Get Your Shipment Moving.</h1>
-<p>Tell us what you're shipping, where it needs to go, and when you need it delivered.</p>
-<a class="btn btn-primary" href="#quote">Request Freight Pricing</a>
-</div>
-</section>
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="container nav-wrap">
 
-<section class="page-section">
-<div class="container contact-grid">
-<div>
-<p class="section-kicker">GET IN TOUCH</p>
-<h2>Contact D.E.W. More Logistics</h2>
-<p class="muted">For transportation inquiries, delivery coordination, and freight quotes, contact our team using the information below.</p>
+      <a href="index.html" class="brand"
+         aria-label="D.E.W. More Logistics Home">
 
-<div class="contact-detail">
-<span>BUSINESS EMAIL</span>
-<a href="mailto:support@dewmorelogistics.com">support@dewmorelogistics.com</a>
-</div>
+        <span class="brand-mark">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="6" y="23" width="30" height="18" rx="3"/>
+            <path d="M36 27h10l8 8v6H36z"/>
+            <circle cx="20" cy="45" r="5"/>
+            <circle cx="45" cy="45" r="5"/>
+            <path d="M44 27v8h9"/>
+          </svg>
+        </span>
 
-<div class="contact-detail">
-<span>BUSINESS OFFICE</span>
-<address>600 W 6th Street, Suite 400<br>Fort Worth, TX 76102</address>
-</div>
+        <span class="brand-text">
+          <span class="brand-top">D.E.W. MORE</span>
+          <span class="brand-bottom">LOGISTICS LLC</span>
+        </span>
 
-<div class="contact-detail">
-<span>PRIMARY SERVICE AREA</span>
-<p>Dallas–Fort Worth, Texas</p>
-</div>
+      </a>
 
-<div class="contact-detail">
-<span>ADDITIONAL SERVICE</span>
-<p>Long-distance cargo transportation upon request and availability.</p>
-</div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active"
+           aria-current="page">Contact</a>
+      </nav>
 
-<p class="form-note">This is a business office and mailing address. Please arrange all freight pickups and drop-offs in advance.</p>
-</div>
+      <a href="#quote" class="btn btn-primary nav-cta">
+        Request a Quote
+      </a>
 
-<div class="quote-panel" id="quote">
-<p class="section-kicker">FREIGHT QUOTE REQUEST</p>
-<h2>Tell Us About Your Shipment</h2>
-<p class="muted">Provide the following details to help us review your transportation request.</p>
+    </div>
+  </header>
 
-<form id="quoteForm">
-<div class="field-grid">
-<label>Full Name *
-<input name="contactName" required autocomplete="name" placeholder="Your full name">
-</label>
 
-<label>Company Name
-<input name="company" autocomplete="organization" placeholder="Company name">
-</label>
+  <main>
 
-<label>Email Address *
-<input name="email" type="email" required autocomplete="email" placeholder="you@company.com">
-</label>
+    <!-- HERO SECTION -->
+    <section class="inner-hero contact-hero">
 
-<label>Phone Number
-<input name="phone" type="tel" placeholder="Contact number">
-</label>
+      <div class="container narrow">
 
-<label>Service Required *
-<select name="service" required>
-<option value="">Select a service</option>
-<option>Cargo Transport</option>
-<option>Long-Distance Delivery</option>
-<option>Local Delivery</option>
-<option>Expedited Freight</option>
-</select>
-</label>
+        <p class="section-kicker">
+          D.E.W. MORE LOGISTICS LLC
+        </p>
 
-<label>Requested Pickup Date
-<input name="pickupDate" type="date">
-</label>
+        <h1>
+          LET'S GET YOUR<br>
+          SHIPMENT MOVING.
+        </h1>
 
-<label>Pickup Location *
-<input name="pickup" required placeholder="City, state, ZIP">
-</label>
+        <p>
+          Professional cargo transportation,
+          local delivery, long-distance delivery,
+          and expedited freight services.
+          Based in Fort Worth, Texas.
+        </p>
 
-<label>Delivery Location *
-<input name="delivery" required placeholder="City, state, ZIP">
-</label>
+        <div class="contact-action-group">
 
-<label>Shipment Weight
-<input name="weight" placeholder="Weight in pounds">
-</label>
+          <a href="#quote" class="btn btn-primary">
+            Request Freight Pricing
+          </a>
 
-<label>Shipment Dimensions
-<input name="dimensions" placeholder="Length x Width x Height">
-</label>
-</div>
+          <a href="tel:+16308416365"
+             class="contact-call-button">
+            Call (630) 841-6365
+          </a>
 
-<label class="wide-field">
-Shipment Description *
-<textarea name="details" rows="5" required placeholder="Describe your cargo, number of pieces, delivery requirements, and any special handling needs."></textarea>
-</label>
+        </div>
 
-<button class="btn btn-primary form-submit" type="submit">Prepare Email Request</button>
-<p class="form-note" id="formStatus" role="status">Your email application will open so you can review and send this request. The website does not automatically submit it.</p>
-</form>
-</div>
-</div>
-</section>
-</main>
+      </div>
 
-<footer class="site-footer">
-<div class="container footer-grid">
-<div>
-<strong>D.E.W. More Logistics LLC</strong>
-<p class="footer-text">Professional transportation solutions based in Fort Worth, Texas.</p>
-</div>
-<div>
-<h4>Quick Links</h4>
-<ul class="footer-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4>Business Office</h4>
-<p class="footer-text">600 W 6th Street, Suite 400<br>Fort Worth, TX 76102</p>
-<a href="mailto:support@dewmorelogistics.com">support@dewmorelogistics.com</a>
-</div>
-</div>
-<div class="container footer-bottom">
-<p>&copy; 2026 D.E.W. More Logistics LLC. All rights reserved.</p>
-</div>
-</footer>
-<script src="quote.js"></script>
+    </section>
+
+
+    <!-- CONTACT INFORMATION & QUOTE FORM -->
+    <section class="page-section">
+
+      <div class="container contact-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="contact-information">
+
+          <p class="section-kicker">
+            GET IN TOUCH
+          </p>
+
+          <h2>
+            Contact D.E.W. More Logistics
+          </h2>
+
+          <p class="muted">
+            Need transportation for your business?
+            Contact us directly or provide your
+            shipment details to request pricing.
+          </p>
+
+
+          <!-- PHONE -->
+          <div class="contact-detail">
+
+            <span>BUSINESS PHONE</span>
+
+            <a class="business-phone"
+               href="tel:+16308416365">
+              (630) 841-6365
+            </a>
+
+            <p>
+              Call to discuss freight transportation,
+              delivery requirements, and availability.
+            </p>
+
+          </div>
+
+
+          <!-- EMAIL -->
+          <div class="contact-detail">
+
+            <span>BUSINESS EMAIL</span>
+
+            <a class="business-email"
+               href="mailto:support@dewmorelogistics.com">
+              support@dewmorelogistics.com
+            </a>
+
+            <p>
+              Email us your transportation inquiries
+              and shipment details.
+            </p>
+
+          </div>
+
+
+          <!-- LOCATION -->
+          <div class="contact-detail">
+
+            <span>FORT WORTH BUSINESS OFFICE</span>
+
+            <address>
+              D.E.W. More Logistics LLC<br>
+              600 W 6th Street, Suite 400<br>
+              Fort Worth, TX 76102
+            </address>
+
+            <p>
+              Business and mailing office.
+              Freight pickup and drop-off arrangements
+              must be confirmed separately.
+            </p>
+
+          </div>
+
+
+          <!-- SERVICE AREA -->
+          <div class="contact-detail">
+
+            <span>SERVICE AREA</span>
+
+            <p>
+              Dallas–Fort Worth and surrounding
+              communities, with long-distance
+              transportation available upon request.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT COLUMN: QUOTE REQUEST -->
+        <div class="quote-panel" id="quote">
+
+          <p class="section-kicker">
+            FREIGHT QUOTE REQUEST
+          </p>
+
+          <h2>
+            Tell Us About Your Shipment
+          </h2>
+
+          <p class="muted">
+            Provide your shipment information so we
+            can review your transportation requirements.
+          </p>
+
+
+          <form id="quoteForm">
+
+            <div class="field-grid">
+
+              <label>
+                Full Name *
+                <input
+                  type="text"
+                  name="contactName"
+                  placeholder="Full name"
+                  autocomplete="name"
+                  required>
+              </label>
+
+              <label>
+                Company Name
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company name"
+                  autocomplete="organization">
+              </label>
+
+              <label>
+                Email Address *
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@company.com"
+                  autocomplete="email"
+                  required>
+              </label>
+
+              <label>
+                Phone Number
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your phone number"
+                  autocomplete="tel">
+              </label>
+
+              <label>
+                Service Required *
+                <select name="service" required>
+                  <option value="">
+                    Select a service
+                  </option>
+                  <option>Cargo Transport</option>
+                  <option>Long-Distance Delivery</option>
+                  <option>Local Delivery</option>
+                  <option>Expedited Freight</option>
+                </select>
+              </label>
+
+              <label>
+                Requested Pickup Date
+                <input
+                  type="date"
+                  name="pickupDate">
+              </label>
+
+              <label>
+                Pickup Location *
+                <input
+                  type="text"
+                  name="pickup"
+                  placeholder="City, state, ZIP"
+                  required>
+              </label>
+
+              <label>
+                Delivery Location *
+                <input
+                  type="text"
+                  name="delivery"
+                  placeholder="City, state, ZIP"
+                  required>
+              </label>
+
+              <label>
+                Estimated Cargo Weight
+                <input
+                  type="text"
+                  name="weight"
+                  placeholder="Example: 1,200 lbs">
+              </label>
+
+              <label>
+                Cargo Dimensions
+                <input
+                  type="text"
+                  name="dimensions"
+                  placeholder="Length x Width x Height">
+              </label>
+
+            </div>
+
+
+            <label class="wide-field">
+              Shipment Description *
+
+              <textarea
+                name="details"
+                rows="5"
+                placeholder="Describe your cargo, number of pieces, special handling needs, and delivery deadline."
+                required></textarea>
+
+            </label>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary form-submit">
+              Prepare Freight Quote Email
+            </button>
+
+            <p class="form-note" id="formStatus"
+               role="status">
+              This form opens your email application
+              with your request prepared. You must
+              review and press Send to submit it.
+              No information is automatically uploaded
+              or stored by this website form.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <strong>D.E.W. More Logistics LLC</strong>
+
+        <p class="footer-text">
+          Professional cargo transportation,
+          local delivery, long-distance delivery,
+          and expedited freight solutions.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Quick Links</h4>
+
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>Contact Information</h4>
+
+        <p class="footer-text">
+          600 W 6th Street, Suite 400<br>
+          Fort Worth, TX 76102
+        </p>
+
+        <p class="footer-text">
+          <a href="tel:+16308416365">
+            (630) 841-6365
+          </a>
+        </p>
+
+        <p class="footer-text">
+          <a href="mailto:support@dewmorelogistics.com">
+            support@dewmorelogistics.com
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <p>
+        &copy; 2026 D.E.W. More Logistics LLC.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="quote.js"></script>
+
 </body>
 </html>
