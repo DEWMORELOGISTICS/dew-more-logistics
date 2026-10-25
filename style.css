@@ -545,3 +545,40 @@ a:focus-visible, button:focus-visible {
     object-position: center !important;
   }
 }
+
+/* RESTORE ORIGINAL CENTERED HEADER */
+
+.site-header > .site-width {
+  width: min(1200px, calc(100% - 40px)) !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.site-header .masthead {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 10px 0 6px !important;
+}
+
+.site-header .brand-link {
+  display: block !important;
+  width: 100% !important;
+  max-width: 940px !important;
+  margin: 0 auto !important;
+}
+
+.site-header .brand-link img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 940px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 650px) {
+  .site-header > .site-width {
+    width: calc(100% - 26px) !important;
+  }
+}
