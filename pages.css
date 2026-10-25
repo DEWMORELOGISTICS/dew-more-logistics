@@ -1,0 +1,221 @@
+
+/* D.E.W. More Logistics - Interior Pages */
+.narrow{max-width:920px}
+.inner-hero{
+  min-height:430px;display:flex;align-items:center;
+  background:linear-gradient(110deg,rgba(8,11,17,.97),rgba(13,19,29,.85)),
+  url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=80") center/cover;
+  padding:90px 0
+}
+.inner-hero h1{
+  font-size:clamp(2.7rem,6vw,5.4rem);
+  line-height:1.04;letter-spacing:-.04em;
+  text-transform:uppercase;max-width:900px;margin-bottom:22px
+}
+.inner-hero p:not(.section-kicker){
+  max-width:730px;color:var(--muted);
+  font-size:1.09rem;margin-bottom:26px
+}
+.about-hero{
+  background-image:linear-gradient(110deg,rgba(8,11,17,.97),rgba(13,19,29,.84)),
+  url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1800&q=80")
+}
+.contact-hero{
+  background-image:linear-gradient(110deg,rgba(8,11,17,.98),rgba(13,19,29,.85)),
+  url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1800&q=80")
+}
+.page-section{padding:85px 0}
+.alt-section{background:#10141c}
+.muted{color:var(--muted);line-height:1.75;margin-bottom:20px}
+
+/* Freight service cards */
+.photo-card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px
+}
+.photo-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow)
+}
+.photo-scene{
+  height:245px;background-size:cover;
+  background-position:center;background-color:#242b35;
+  position:relative
+}
+.photo-scene:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 45%,rgba(9,12,18,.5))
+}
+.cargo-scene{
+  background-image:url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1100&q=85")
+}
+.longhaul-scene{
+  background-image:url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1100&q=85")
+}
+.local-scene{
+  background-image:url("https://images.unsplash.com/photo-1566939887538-5b5d12c4707f?auto=format&fit=crop&w=1100&q=85")
+}
+.express-scene{
+  background-image:url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1100&q=85")
+}
+.photo-card-body{padding:26px}
+.service-number{
+  font-size:.76rem;font-weight:800;
+  color:var(--accent-2);letter-spacing:.18em
+}
+.photo-card-body h3{font-size:1.5rem;margin:10px 0}
+.photo-card-body p{color:var(--muted);margin-bottom:18px}
+.photo-card-body a{color:var(--accent-2);font-weight:800}
+
+/* Layout */
+.split-panel{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:55px;align-items:center
+}
+.split-panel h2,.location-highlight h2,
+.contact-grid h2,.quote-panel h2,.action-panel h2{
+  font-size:clamp(2rem,4vw,3.3rem);
+  line-height:1.1;margin-bottom:20px
+}
+.step-stack{display:grid;gap:16px}
+.step-stack>div{
+  display:flex;gap:22px;border:1px solid var(--border);
+  background:var(--panel);border-radius:14px;padding:22px
+}
+.step-stack b{color:var(--accent-2);font-size:1.2rem}
+.step-stack strong,.step-stack small{display:block}
+.step-stack small{
+  color:var(--muted);font-size:.96rem;margin-top:5px
+}
+.action-panel{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:30px;padding:42px;
+  background:linear-gradient(120deg,#1c2029,#101319);
+  border:1px solid var(--border);border-radius:20px
+}
+.action-panel p:not(.section-kicker){color:var(--muted)}
+
+/* About */
+.about-visual{
+  min-height:380px;position:relative;border-radius:20px;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.3)),
+  url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1100&q=85") center/cover
+}
+.visual-stamp{
+  position:absolute;bottom:24px;left:24px;
+  padding:19px 25px;background:rgba(9,12,18,.85);
+  border-left:4px solid var(--accent);
+  font-size:.76rem;letter-spacing:.14em
+}
+.visual-stamp strong{
+  display:block;font-size:1.75rem;letter-spacing:.06em
+}
+.value-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px
+}
+.value-card{
+  border:1px solid var(--border);border-radius:16px;
+  background:var(--panel);padding:28px
+}
+.value-card span{
+  color:var(--accent-2);font-size:.9rem;font-weight:900
+}
+.value-card h3{font-size:1.25rem;margin:20px 0 12px}
+.value-card p{color:var(--muted)}
+.location-highlight{
+  display:grid;grid-template-columns:1fr .85fr;
+  gap:32px;align-items:center
+}
+.location-highlight address,.contact-detail address{
+  font-style:normal;line-height:1.7;
+  font-weight:700;margin-bottom:16px
+}
+.map-placeholder{
+  min-height:310px;border:1px solid var(--border);
+  border-radius:18px;
+  background:radial-gradient(circle at center,rgba(255,106,0,.13),transparent 50%),
+  repeating-linear-gradient(40deg,#181d27 0,#181d27 1px,#11151d 1px,#11151d 34px);
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:5px;text-align:center;padding:25px
+}
+.map-placeholder span{
+  color:var(--accent-2);font-size:.85rem;
+  letter-spacing:.2em;font-weight:800
+}
+.map-placeholder strong{
+  font-size:6rem;line-height:1.2;letter-spacing:-.1em
+}
+.map-placeholder small{color:var(--muted);max-width:250px}
+
+/* Contact and quote form */
+.contact-grid{
+  display:grid;grid-template-columns:.75fr 1.25fr;gap:56px
+}
+.contact-detail{
+  border-top:1px solid var(--border);padding:22px 0
+}
+.contact-detail span{
+  font-size:.78rem;letter-spacing:.12em;
+  color:var(--accent-2);font-weight:800;
+  display:block;margin-bottom:12px
+}
+.contact-detail a{font-weight:700;overflow-wrap:anywhere}
+.contact-detail p{color:var(--muted)}
+.quote-panel{
+  border:1px solid var(--border);border-radius:20px;
+  background:var(--panel);padding:34px
+}
+.field-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px
+}
+.quote-panel label{
+  display:block;font-weight:700;font-size:.9rem
+}
+.quote-panel label span{color:var(--accent-2)}
+.quote-panel input,.quote-panel select,.quote-panel textarea{
+  display:block;width:100%;margin-top:9px;padding:14px;
+  border:1px solid #434954;border-radius:9px;
+  background:#0e121a;color:#fff;
+  font:inherit;font-weight:400;outline-offset:3px
+}
+.quote-panel input:focus,
+.quote-panel select:focus,
+.quote-panel textarea:focus{
+  outline:2px solid var(--accent)
+}
+.quote-panel .wide-field{margin-top:20px}
+.form-submit{margin-top:22px;cursor:pointer}
+.form-note{
+  font-size:.84rem;color:var(--muted);margin-top:16px
+}
+
+/* Footer */
+.footer-email{
+  display:inline-block;color:var(--accent-2);
+  margin-top:9px;overflow-wrap:anywhere
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .split-panel,.location-highlight,.contact-grid{
+    grid-template-columns:1fr
+  }
+  .value-grid{grid-template-columns:1fr}
+  .action-panel{flex-direction:column;align-items:flex-start}
+  .photo-scene{height:220px}
+}
+
+/* Mobile */
+@media(max-width:680px){
+  .photo-card-grid,.field-grid{grid-template-columns:1fr}
+  .quote-panel{padding:22px}
+  .inner-hero{min-height:390px;padding:75px 0}
+  .page-section{padding:65px 0}
+  .action-panel{padding:26px}
+  .map-placeholder strong{font-size:4.5rem}
+}
